@@ -1,9 +1,10 @@
+import { Login } from './api/Login';
 import Register from './Register';
 
 function App() {
   return (
     <main className=''>
-      <Register />
+      <Login />
     </main>
   );
 }
