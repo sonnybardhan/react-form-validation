@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "../../../JS Revision"
+    },
+    {
+      "path": "../../../epicreact"
+    },
+    {
+      "path": "../../../codevolution"
+    },
+    {
+      "path": "../.."
+    },
+    {
+      "path": "../../../DSA"
+    },
+    {
+      "path": "../../../JS Projects"
+    },
+    {
+      "path": "../../../CSS playground"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "CSS playground"
+  }
+}
