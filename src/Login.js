@@ -6,6 +6,8 @@ const USERS_DB = {
   tommy: 'xyz123',
 };
 
+const ROLES = ['editor', 'admin', 'user'];
+
 const Login = () => {
   const { auth, setAuth } = useContext(AuthContext);
   const userRef = useRef();
