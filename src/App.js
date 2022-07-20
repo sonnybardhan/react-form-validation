@@ -1,4 +1,4 @@
-import { Login } from './api/Login';
+import Login from './Login';
 import Register from './Register';
 
 function App() {

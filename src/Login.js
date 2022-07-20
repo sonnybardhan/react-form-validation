@@ -1,6 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import AuthContext from './context/AuthProvider';
 
-export const Login = () => {
+const USERS_DB = {
+  sonny: 'abc123',
+  tommy: 'xyz123',
+};
+
+const Login = () => {
+  const { auth, setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -20,10 +27,33 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user, pwd);
-    setUser('');
-    setPwd('');
-    setSuccess(true);
+
+    let response = {};
+
+    setTimeout(() => {
+      if (pwd === USERS_DB[user]) {
+        response.roles = ['user', 'admin'];
+        response.accessToken = 'abcxyz123';
+        setAuth({
+          user,
+          pwd,
+          roles: response.roles,
+          accessToken: response.accessToken,
+        });
+
+        setUser('');
+        setPwd('');
+        setSuccess(true);
+      } else {
+        setErrMsg('Something went wrong');
+        errRef.current.focus();
+      }
+    }, 1500);
   };
+
+  useEffect(() => {
+    console.log('auth: ', auth);
+  }, [auth]);
 
   return (
     <>
@@ -77,3 +107,5 @@ export const Login = () => {
     </>
   );
 };
+
+export default Login;
